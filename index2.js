@@ -10,9 +10,21 @@ let days = [
   "Friday",
   "Saturday",
 ];
+
 let day = days[now.getDay()];
-let hours = now.getHours();
-let minutes = now.getMinutes();
+// let hours = now.getHours();
+// let minutes = now.getMinutes();
+
+function addZero(i) {
+  if (i < 10) {
+    i = "0" + i;
+  }
+  return i;
+}
+const d = new Date();
+let hours = addZero(d.getHours());
+let minutes = addZero(d.getMinutes());
+let time = hours + ":" + minutes;
 
 let currentDate = document.querySelector(".current");
 currentDate.innerHTML = `${day} ${hours}:${minutes}`;
